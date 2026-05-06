@@ -279,7 +279,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         pass
 
 if __name__ == "__main__":
-    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    with socketserver.ThreadingTCPServer(("", PORT), Handler) as httpd:
         print("╔══════════════════════════════════════════════╗")
         print("║  Learning Commons Dashboard                  ║")
         print(f"║  Running at: http://localhost:{PORT}         ║")
