@@ -18,7 +18,7 @@ import urllib.request
 import urllib.error
 from urllib.parse import urljoin
 
-PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
+PORT = int(os.environ.get("PORT", sys.argv[1] if len(sys.argv) > 1 else 8080))
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 # Keep only known-good direct mappings here.
